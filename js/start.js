@@ -56,11 +56,10 @@ window.renderStatistics = function (ctx, names, times) {
     // рисует колонку гистограммы
     // прозрачность от 0,3 до 0,9
     var opacity = (Math.floor(Math.random() * 7) + 3) / 10;
-    if (names[i] === 'Вы') {
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    } else {
-      ctx.fillStyle = 'rgba(0, 0, 225,' + opacity + ')';
-    }
+    var opacityColor = 'rgba(0, 0, 225,' + opacity + ')';
+    var color = 'rgba(255, 0, 0, 1)';
+
+    ctx.fillStyle = (names[i] === 'Вы') ? color : opacityColor;
     ctx.fillRect(columnX, columnY, COLUMN_WIDTH, columnHeight);
 
     // выводит имя игрока
