@@ -67,5 +67,3 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(names[i], columnX, HEADER + CHART_HEIGHT + GAP);
   }
 };
-
-
