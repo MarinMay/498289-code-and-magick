@@ -34,7 +34,6 @@
     renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
     ctx.fillStyle = '#000';
-
     ctx.font = '16px PT Mono';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';

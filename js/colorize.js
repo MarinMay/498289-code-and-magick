@@ -23,7 +23,6 @@
     '#e6e848'];
 
   var setup = document.querySelector('.setup');
-
   var wizardCoat = setup.querySelector('.wizard-coat');
   var wizardEye = setup.querySelector('.wizard-eyes');
   var wizardFireball = setup.querySelector('.setup-fireball-wrap');

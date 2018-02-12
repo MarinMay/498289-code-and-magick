@@ -88,3 +88,4 @@
 
   setupSimilar.classList.remove('hidden');
 })();
+
