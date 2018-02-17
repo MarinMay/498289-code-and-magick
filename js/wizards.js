@@ -40,7 +40,7 @@
   }
 
   // добавляем фрагмент в окно
-  similarList.appendChild(window.wizards);
+  similarList.appendChild(fragment);
 
   setupSimilar.classList.remove('hidden');
 })();
