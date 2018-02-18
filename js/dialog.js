@@ -6,6 +6,12 @@
   var dialogHandle = setup.querySelector('input[name="avatar"]');
   var setupTop = '80px';
   var setupLeft = '50%';
+  var form = document.querySelector('.setup-wizard-form');
+
+  function onFormSubmit(evt) {
+    closePopup();
+    evt.preventDefault();
+  }
 
   // показываем окно setup
   function openPopup() {
@@ -92,4 +98,8 @@
   });
 
   dialogHandle.addEventListener('mousedown', onMouseDown);
+
+  form.addEventListener('submit', function (evt) {
+    window.backend.save(onFormSubmit(evt), window.backend.errorHandler, new FormData(form));
+  });
 })();
