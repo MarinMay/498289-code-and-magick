@@ -23,8 +23,8 @@
     var wizardElement = similarWizardTemplate.cloneNode(true);
 
     wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
-    wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
+    wizardElement.querySelector('.wizard-coat').style.fill = wizard.colorCoat;
+    wizardElement.querySelector('.wizard-eyes').style.fill = wizard.colorEyes;
 
     return wizardElement;
   }
@@ -34,13 +34,16 @@
   createdWizards(window.wizardData.WIZARD_COUNT);
 
   // создаем фрагмент и добавляем в него волшебников и показываем их в окне setup
-  var fragment = document.createDocumentFragment();
-  for (var i = 0; i < wizards.length; i++) {
-    fragment.appendChild(renderWizard(wizards[i]));
+  function getWizard(wizardsData) {
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < window.wizardData.WIZARD_COUNT; i++) {
+      fragment.appendChild(renderWizard(wizardsData[i]));
+    }
+
+    // добавляем фрагмент в окно
+    similarList.appendChild(fragment);
+
+    setupSimilar.classList.remove('hidden');
   }
-
-  // добавляем фрагмент в окно
-  similarList.appendChild(fragment);
-
-  setupSimilar.classList.remove('hidden');
+  window.backend.load(getWizard, window.backend.errorHandler);
 })();
