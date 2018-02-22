@@ -4,20 +4,6 @@
   var similarList = document.querySelector('.setup-similar-list');
   var setupSimilar = document.querySelector('.setup-similar');
 
-  // конструктор волшебника
-  function Wizard(names, surnames, coatColors, eyesColors) {
-    this.name = window.util.getRandomElemArray(names) + ' ' + window.util.getRandomElemArray(surnames);
-    this.coatColor = window.util.getRandomElemArray(coatColors);
-    this.eyesColor = window.util.getRandomElemArray(eyesColors);
-  }
-
-  // создает массив волшебников заданной длинны
-  function createdWizards(num) {
-    for (var i = 0; i < num; i++) {
-      wizards[i] = new Wizard(window.wizardData.NAMES, window.wizardData.SURNAMES, window.wizardData.COAT_COLORS, window.wizardData.EYES_COLORS);
-    }
-  }
-
   // добавляет в элемент содержимое волшебника
   function renderWizard(wizard) {
     var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -29,14 +15,12 @@
     return wizardElement;
   }
 
-  // создаем массив волшебников
-  var wizards = [];
-  createdWizards(window.wizardData.WIZARD_COUNT);
-
   // создаем фрагмент и добавляем в него волшебников и показываем их в окне setup
-  function getWizard(wizardsData) {
+  function addWizardsList(wizardsData) {
     var fragment = document.createDocumentFragment();
-    for (var i = 0; i < window.wizardData.WIZARD_COUNT; i++) {
+    similarList.innerHTML = '';
+    var takeNumber = wizardsData.length > window.wizardData.WIZARD_COUNT ? window.wizardData.WIZARD_COUNT : wizardsData.length;
+    for (var i = 0; i < takeNumber; i++) {
       fragment.appendChild(renderWizard(wizardsData[i]));
     }
 
@@ -45,5 +29,5 @@
 
     setupSimilar.classList.remove('hidden');
   }
-  window.backend.load(getWizard, window.backend.errorHandler);
+  window.renderWizards = addWizardsList;
 })();

@@ -111,7 +111,7 @@
             <g class="wizard">
               <use xlink:href="#wizard-coat" class="wizard-coat" style="fill: #6589a4"></use>
               <use xlink:href="#wizard-head" class="wizard-head"></use>
-              <use xlink:href="#wizard-eyes" class="wizard-eyes"></use>
+              <use xlink:href="#wizard-eyes" class="wizard-eyes" style="fill: black"></use>
               <use xlink:href="#wizard-hands" class="wizard-hands"></use>
             </g>
           </svg>
@@ -182,29 +182,29 @@
   </div>
 </template>
 <script>
-  //размер фаербола
+  // размер фаербола
   var fireballSize = 22;
-  //скорость мага
+  // скорость мага
   var wizardSpeed = 3;
-  //ширина мага
+  // ширина мага
   var wizardWidth = 70;
 
-  //скорость фаербола зависит от ветра
+  // скорость фаербола зависит от ветра
   var getFireballSpeed = function(left) {
     return left ? 5 : 2;
   };
 
-  //высота мага зависит от ширины
+  // высота мага зависит от ширины
   var getWizardHeight = function (wizardWidth) {
     return 1.337 * wizardWidth;
   };
 
-  //положение мага по горизонтали
+  // положение мага по горизонтали
   var getWizardX = function(width) {
     return width / 2 - wizardWidth / 2;
   };
 
-  //положение мага по вертикали
+  // положение мага по вертикали
   var getWizardY = function(height) {
     return height / 3;
   };
@@ -212,7 +212,8 @@
 <script src="js/backend.js"></script>
 <script src="js/util.js"></script>
 <script src="js/wizard-data.js"></script>
-<script src="js/wizards.js"></script>
+<script src="js/renderWizards.js"></script>
+<script src="js/similar.js"></script>
 
 <script src="js/dialog.js"></script>
 

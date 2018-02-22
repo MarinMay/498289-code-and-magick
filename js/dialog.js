@@ -9,7 +9,7 @@
   var form = document.querySelector('.setup-wizard-form');
 
   function onFormSubmit(evt) {
-    closePopup();
+    window.backend.save(closePopup, window.backend.errorHandler, new FormData(form));
     evt.preventDefault();
   }
 
@@ -99,7 +99,5 @@
 
   dialogHandle.addEventListener('mousedown', onMouseDown);
 
-  form.addEventListener('submit', function (evt) {
-    window.backend.save(onFormSubmit(evt), window.backend.errorHandler, new FormData(form));
-  });
+  form.addEventListener('submit', onFormSubmit);
 })();
