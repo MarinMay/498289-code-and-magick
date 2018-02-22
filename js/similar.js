@@ -4,7 +4,6 @@
   var wizards = [];
   var coatColor = document.querySelector('.wizard-coat').style.fill;
   var eyesColor = document.querySelector('.wizard-eyes').style.fill;
-  var lastTimeout;
 
   // присваивает волшебнику степень похожести
   function getRank(wizard) {
