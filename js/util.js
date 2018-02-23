@@ -23,7 +23,6 @@
     }
   }
 
-
   function debounce(fun) {
     if (lastTimeout) {
       window.clearTimeout(lastTimeout);

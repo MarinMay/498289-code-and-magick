@@ -17,6 +17,7 @@
     return rank;
   }
 
+  // сортировка по имени по алфавиту
   function namesComparator(a, b) {
     if (a > b) {
       return 1;
@@ -61,7 +62,6 @@
     wizards = data;
     updateWizards();
   }
-
 
   window.backend.load(successHandler, window.backend.errorHandler);
 

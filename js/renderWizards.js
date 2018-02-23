@@ -29,5 +29,6 @@
 
     setupSimilar.classList.remove('hidden');
   }
+
   window.renderWizards = addWizardsList;
 })();

@@ -12,13 +12,10 @@
         var color = colorArray[count];
         wizardElement.style.fill = colorArray[count++];
         // вызываем сортировку волшебников
-        if (wizardElement.classList.contains('wizard-coat')) {
-          window.similar.onCoatChange(color);
-        } else {
-          window.similar.onEyesChange(color);
-        }
+        var isElementCoat = wizardElement.classList.contains('wizard-coat');
+        var onElementChange = isElementCoat ? window.similar.onCoatChange : window.similar.onEyesChange;
+        onElementChange(color);
       }
-
       if (count >= colorArray.length) {
         count = 0;
       }

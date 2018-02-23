@@ -1,25 +1,5 @@
 'use strict';
 (function () {
-  var NAMES = [
-    'Иван',
-    'Хуан Себастьян',
-    'Мария',
-    'Кристоф',
-    'Виктор',
-    'Юлия',
-    'Люпита',
-    'Вашингтон'];
-
-  var SURNAMES = [
-    'да Марья',
-    'Верон',
-    'Мирабелла',
-    'Вальц',
-    'Онопко',
-    'Топольницкая',
-    'Нионго',
-    'Ирвинг'];
-
   var COAT_COLORS = [
     'rgb(101, 137, 164)',
     'rgb(241, 43, 107)',
@@ -45,8 +25,6 @@
   var WIZARD_COUNT = 4;
 
   window.wizardData = {
-    NAMES: NAMES,
-    SURNAMES: SURNAMES,
     COAT_COLORS: COAT_COLORS,
     EYES_COLORS: EYES_COLORS,
     FIREBALL_COLORS: FIREBALL_COLORS,
