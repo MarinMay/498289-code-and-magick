@@ -1,9 +1,24 @@
 'use strict';
 (function () {
-
   var wizards = [];
   var coatColor = document.querySelector('.wizard-coat').style.fill;
   var eyesColor = document.querySelector('.wizard-eyes').style.fill;
+
+  function addWizardArtifactList() {
+    var similarList = document.querySelector('.setup-similar-list');
+    similarList.addEventListener('mouseover', function (evt) {
+      var similarItem = evt.target.closest('.setup-similar-item');
+      if (similarItem) {
+        similarItem.classList.add('setup-similar-item--before');
+      }
+    });
+    similarList.addEventListener('mouseout', function (evt) {
+      var similarItem = evt.target.closest('.setup-similar-item');
+      if (similarItem) {
+        similarItem.classList.remove('setup-similar-item--before');
+      }
+    });
+  }
 
   // присваивает волшебнику степень похожести
   function getRank(wizard) {
@@ -58,12 +73,14 @@
     window.util.debounce(updateWizards);
   }
 
-  function successHandler(data) {
+  function onSuccessLoad(data) {
     wizards = data;
     updateWizards();
+    var wizardLabel = document.querySelector('.setup-similar-label');
+    addWizardArtifactList(wizardLabel);
   }
 
-  window.backend.load(successHandler, window.backend.errorHandler);
+  window.backend.load(onSuccessLoad, window.backend.onErrorRequest);
 
   window.similar = {
     onEyesChange: onEyesChange,

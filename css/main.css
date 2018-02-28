@@ -875,6 +875,8 @@ input[type=radio]:checked + .review-mark-label
 
 .setup-similar-item
 {
+
+    position: relative;
     overflow: hidden;
 
     max-width: 150px;
@@ -1018,4 +1020,31 @@ input[type=radio]:checked + .review-mark-label
     height: 100%;
 
     opacity: 0;
+}
+
+.drop-zone
+{
+    display: inline-block;
+
+    width: 63px;
+    padding: 4px;
+
+    text-align: center;
+    color: #fff;
+    font-size: 10px;
+    border: 1px dashed #fff;
+    border-radius: 5px;
+}
+
+.setup-similar-item--before::before {
+    content: attr(data-content);
+    position: absolute;
+    height: 130px;
+    z-index: 999;
+    top: 0;
+    padding: 10px 5px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
 }
